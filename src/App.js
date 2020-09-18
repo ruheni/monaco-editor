@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Editor from "@monaco-editor/react";
 
 function App() {
+  const [theme, setTheme] = useState("dark");
+  const [language, setLanguage] = useState("javascript");
+  const [isEditorReady, setIsEditorReady] = useState(false);
+
+  function handleEditorDidMount() {
+    setIsEditorReady(true);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Editor
+        height="100vh"
+        theme={theme}
+        language={language}
+        value={language}
+        editorDidMount={handleEditorDidMount}
+      />
+    </>
   );
 }
 
