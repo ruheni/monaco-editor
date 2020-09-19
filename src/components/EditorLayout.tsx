@@ -1,12 +1,8 @@
 import React from 'react'
 import { Tree, Layout, Menu } from 'antd';
 
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
-
 const { DirectoryTree } = Tree;
-
-const { SubMenu } = Menu;
-const { Header, Content, Sider } = Layout;
+const { Content, Sider } = Layout;
 
 const treeData = [
     {
@@ -27,8 +23,8 @@ const treeData = [
     },
 ];
 
-const EditorLayout = ({ children }) => {
-    const onSelect = (keys, event) => {
+const EditorLayout: React.FC<{}> = ({ children }) => {
+    const onSelect = (keys: any, event: any) => {
         console.log('Trigger Select', keys, event);
     };
 
