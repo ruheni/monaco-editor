@@ -1,12 +1,15 @@
+import 'antd/dist/antd.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import CodeEditor from './components/CodeEditor';
+import EditorLayout from './components/EditorLayout';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <EditorLayout>
+      <CodeEditor />
+    </EditorLayout>
   </React.StrictMode>,
   document.getElementById('root')
 );
